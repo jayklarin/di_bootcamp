@@ -1,3 +1,8 @@
+import os
+
+# Clear terminal at the start of the program
+os.system('cls' if os.name == 'nt' else 'clear')
+
 # 🌟 Exercise 1: Favorite Numbers
 #
 # Key Python Topics:
@@ -28,28 +33,31 @@ def favorite_numbers():
     print("Friend's favorite numbers:", friend_fav_numbers)
     print("Our favorite numbers:", our_fav_numbers)
 #favorite_numbers()
-#
-#
+
 # 🌟 Exercise 2: Tuple
 #
 # Key Python Topics:
 #
 # Tuples (immutability)
 #
-#
 # Instructions:
 #
 # Given a tuple of integers, try to add more integers to the tuple.
 # Hint: Tuples are immutable, meaning they cannot be changed after creation. Think about why you can’t add more integers to a tuple.
 #
-#
+def tuple_error():
+    my_tuple = (1, 2, 3, 4)
+    print("Original tuple:", my_tuple)
+    # Attempting to add more integers to the tuple will raise an error
+    my_tuple[0] = 5  # This raises a TypeError
+#tuple_error()
+
 # 🌟 Exercise 3: List Manipulation
 #
 # Key Python Topics:
 #
 # Lists
 # List methods: append, remove, insert, count, clear
-#
 #
 # Instructions:
 #
@@ -62,6 +70,25 @@ def favorite_numbers():
 # Empty the list.
 # Print the final state of the list.
 #
+def list_manipulation():
+    basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+    print("Original basket:", basket)
+    
+    basket.remove("Banana")
+    basket.remove("Blueberries")
+    print("After removing Banana and Blueberries:", basket)
+
+    basket.append("Kiwi")       # goes to the end of the list
+    basket.insert(0, "Apples")  # goes to the beginning of the list
+    print("After adding Apples to the beginning and Kiwi to the end :", basket)
+
+    apple_count = basket.count("Apples")
+    print(f"'Apples' appear {apple_count} times in the list.")
+
+    basket.clear()
+    print("After emptying the list:", basket)
+#list_manipulation()
+
 #
 # 🌟 Exercise 4: Floats
 #
@@ -79,7 +106,19 @@ def favorite_numbers():
 # 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5.
 # Avoid hard-coding each number manually.
 # Think: Can you generate this sequence using a loop or another method?
-#
+
+def lists_floats_and_integers():
+
+    floats =  [1.5 + i * 1 for i in range(4)]  # Generates [1.5, 2.5, 3.5, 4.5]
+    integers = [2 + i for i in range(4)]  # Generates [2, 3, 4, 5]
+    floats_and_integers = floats + integers
+    
+    print("List of floats:", floats)
+    print("List of integers:", integers)
+    floats_and_integers = sorted(floats_and_integers)
+    print("List of mixed floats and integers:", floats_and_integers)
+
+#lists_floats_and_integers()
 #
 # 🌟 Exercise 5: For Loop
 #
@@ -191,3 +230,14 @@ def favorite_numbers():
 # Prepare each sandwich, one by one, and move them to a list called finished_sandwiches.
 # Print a message for each sandwich made, such as: "I made your Tuna sandwich."
 # Print the final list of all finished sandwiches.
+
+
+# Here are the functions for the exercises above:
+#favorite_numbers()
+#tuple_error()
+#list_manipulation()
+#lists_floats_and_integers()
+
+#about 40 minutest at this point
+
+# next...
