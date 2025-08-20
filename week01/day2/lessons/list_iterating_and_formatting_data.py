@@ -76,9 +76,9 @@ def print_numbers_while():
 
 # The functions above can be called here as needed.
 
-list1 = [5, 10, 15, 20, 25, 50, 20, 20, 45, 70, 20, 90, 100]
+list1 = [5, 10, 15, 20, 25, 50, 20, 20, 45, 70, 20, 90, 100, 20]
 list2 = [5, 10, 15, 20, 25, 50, 20]
-replace_values(list1, 20, 200)
+replace_values(list2, 20, 200)
 
 #unpack_tuple()
 #multiplication_table()
