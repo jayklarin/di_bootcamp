@@ -1,4 +1,6 @@
 import os
+import random
+import math
 
 # Clear terminal at the start of the program
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -6,8 +8,8 @@ os.system('cls' if os.name == 'nt' else 'clear')
 # The list is first because we plug it into the function
 list1 = [5, 10, 15, 20, 25, 50, 20]
 def replace_values(lst, change_value, to_value):
-    """Replace every occurrence of change_value in lst with to_value.
-    Prints a before/after summary and returns (lst, occurrences)."""
+    # Replace every occurrence of change_value in lst with to_value.
+    # Prints a before/after summary and returns (lst, occurrences).
     print('List before running:')
     print(lst)
     print()
@@ -75,11 +77,38 @@ def print_numbers_while():
 
 
 # The functions above can be called here as needed.
+# create a function to generate a list with: length, number range, a static number, 
+# a replacement number, and the percentage of the numbers in the list that should be replaced.
+
+import random
+
+def create_list(length, num_range, static_num, percentage):
+    p = percentage / 100
+    lst = []
+    # The underscore _ is used because we don't use the value in the loop.
+    # It's more pythonic to use it this way.
+    for _ in range(length):
+        if random.random() < p:
+            lst.append(static_num)
+        else:
+            n = random.randint(1, num_range)
+            lst.append(n if n != static_num else (n % num_range) + 1)  # avoid accidental static_num
+    return lst
+
+
+list_length = 100
+number_range = 100
+number_to_replace = 20
+number_to_replace_with = 200
+percentage_to_replace = 7
+
+#print(create_list(list_length, number_range, number_to_replace, percentage_to_replace))
+semi_random_list = create_list(list_length, number_range, number_to_replace, percentage_to_replace)
+replace_values(semi_random_list, number_to_replace, number_to_replace_with)
 
 list1 = [5, 10, 15, 20, 25, 50, 20, 20, 45, 70, 20, 90, 100, 20]
 list2 = [5, 10, 15, 20, 25, 50, 20]
-replace_values(list2, 20, 200)
-
+#replace_values(list1, 20, 200)
 #unpack_tuple()
 #multiplication_table()
 #print_numbers_while()
