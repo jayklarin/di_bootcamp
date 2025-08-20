@@ -68,7 +68,7 @@ print("5.5 rounds to ",round(5.5))
 print("5.2 rounds up to",math.ceil(5.2)) 
 # round down
 print("5.6 rounds down to",math.floor(5.6))
-'''
+
 
 # Type Casting
 # Convert string to number
@@ -144,3 +144,39 @@ elif first_name == 'John':
     print('Hello John')
 else:
     print('Hello stranger')
+
+# ask user name
+user_name = input('What is your name? ')
+if len(user_name) <= 5:
+    print(f'Hello {user_name}, your name is short')
+else:
+    print(f'Hello {user_name}, your name long')
+
+# Kewords
+my_hobbies_str = "reading coding gaming food traveling"
+if 'food' in my_hobbies_str:
+    print("Let's have pizza")
+else:
+    print("What's wrong with you?   ")  
+
+my_hobbies_str_no_spaces = "readingcodinggamingfoodtraveling"
+if 'food' in my_hobbies_str_no_spaces:
+    print("Let's have pizza")
+else:
+    print("What's wrong with you?   ")  
+
+my_hobbies_list = ['reading', 'coding', 'gaming', 'food', 'traveling']
+if 'food' in my_hobbies_list:
+    print("Let's have pizza")
+else:
+    print("What's wrong with you?   ")  
+'''
+my_number = int(input('Enter a number between 1 and 100: '))
+if my_number % 3 == 0:
+    print('Fizz')
+elif my_number % 5 == 0:
+    print('Buzz')
+elif my_number % 5 == 0 and my_number % 3 == 0:
+    print('FizzBuzz')
+else:
+    print(my_number, 'is not divisible by 3 or 5')
