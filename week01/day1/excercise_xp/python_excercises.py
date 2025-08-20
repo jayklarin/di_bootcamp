@@ -1,5 +1,5 @@
 # Excercise 1: Hello World
-print('Hello world\n'*5)
+print('Hello world\n'*4)
 
 
 #Exercise 2 : Some Math
