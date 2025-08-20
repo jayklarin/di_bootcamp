@@ -1,0 +1,69 @@
+/* === Baseline Dark Mode (user stylesheet) === */
+:root {
+  --fg: #e6e6e6;            /* text */
+  --fg-muted: #c9c9c9;
+  --bg: #121212;            /* page background */
+  --bg-elev-1: #1a1a1a;     /* cards/sidebars */
+  --bg-elev-2: #222;
+  --link: #8ab4ff;
+  --border: #2e2e2e;
+}
+
+html, body {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+/* Common containers */
+main, article, nav, aside, section,
+div, header, footer {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+/* Text */
+p, li, dd, dt, span, label, summary {
+  color: var(--fg) !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff !important;
+}
+
+/* Links */
+a { color: var(--link) !important; }
+a:visited { opacity: .95; }
+
+/* Controls & form fields */
+input, textarea, select, button {
+  background: var(--bg-elev-1) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Tables & borders */
+table, th, td {
+  background: var(--bg-elev-1) !important;
+  color: var(--fg) !important;
+  border-color: var(--border) !important;
+}
+
+/* Code blocks */
+pre, code, samp, kbd {
+  background: #0f0f0f !important;
+  color: #e8e8e8 !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Cards/panels often used for sidebars */
+[class*="card"], [class*="panel"], [class*="sidebar"],
+[role="complementary"], [role="navigation"] {
+  background: var(--bg-elev-1) !important;
+}
+
+/* Subtle shadows instead of bright outlines */
+* { box-shadow: none !important; }
+
+/* Don’t affect media */
+img, video, canvas, svg { filter: none !important; }

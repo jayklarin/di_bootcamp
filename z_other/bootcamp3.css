@@ -1,0 +1,18 @@
+/* === Force Dark via Invert Trick (aggressive) === */
+/* Turn the whole page dark */
+html {
+  background: #121212 !important;
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Fix elements that should NOT be inverted */
+img, picture, video, canvas, iframe, svg, object, embed {
+  filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Tweak typical UI bits after inversion */
+body, main, article, section, div, nav, aside, header, footer {
+  background: transparent !important;
+}
+a { color: #8ab4ff !important; }
+pre, code { background: #1a1a1a !important; }

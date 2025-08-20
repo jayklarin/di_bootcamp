@@ -1,0 +1,6 @@
+/* Apply only when the site thinks you are in light mode */
+@media (prefers-color-scheme: light) {
+  /* Include either Profile A rules here, or use the Invert Trick */
+  html, body { background:#121212 !important; color:#e6e6e6 !important; }
+  /* …(paste the rest of Profile A here)… */
+}
