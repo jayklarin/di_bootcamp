@@ -7,6 +7,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 # The list is first because we plug it into the function
 list1 = [5, 10, 15, 20, 25, 50, 20]
+
 def replace_values(lst, change_value, to_value):
     # Replace every occurrence of change_value in lst with to_value.
     # Prints a before/after summary and returns (lst, occurrences).
@@ -31,57 +32,10 @@ def replace_values(lst, change_value, to_value):
     print(lst)
 
     return lst, occurrences
-
-# Example call
 #replace_values(list1, 20, 200)
 
-
-
-# Example usage:
-#replace_values(20, 200)
-
-
-# Unpack the following tuple into 4 variables
-def unpack_tuple():
-    a_tuple = (10, 20, 30, 40)
-    a, b, c, d = a_tuple
-
-    print(a)
-    print(b)
-    print(c)
-    print(d)
-
-#unpack_tuple()
-
-# Accept a number from the user and print its multiplication table
-
-def multiplication_table():
-    try:
-        number = int(input("Enter a number to see its multiplication table: "))
-        print(f"Multiplication table for {number}:")
-        for i in range(1, 13):
-            print(f"{number} x {i} = {number * i}")
-    except ValueError:
-        print("Please enter a valid integer.")
-
-#multiplication_table()
-
-# Print the numbers from 1 to 10 using while loop
-
-def print_numbers_while():
-    i = 1
-    while i <= 10:
-        print(i)
-        i += 1
-#print_numbers_while()
-
-
-# The functions above can be called here as needed.
-# create a function to generate a list with: length, number range, a static number, 
-# a replacement number, and the percentage of the numbers in the list that should be replaced.
-
-import random
-
+# This is not part of the excercise, but I thought it would be useful.
+# I wanted more control over the list used in thd replace_values function.
 def create_list(length, num_range, static_num, percentage):
     p = percentage / 100
     lst = []
@@ -94,21 +48,60 @@ def create_list(length, num_range, static_num, percentage):
             n = random.randint(1, num_range)
             lst.append(n if n != static_num else (n % num_range) + 1)  # avoid accidental static_num
     return lst
-
-
-list_length = 100
-number_range = 100
-number_to_replace = 20
-number_to_replace_with = 200
-percentage_to_replace = 7
-
 #print(create_list(list_length, number_range, number_to_replace, percentage_to_replace))
-semi_random_list = create_list(list_length, number_range, number_to_replace, percentage_to_replace)
-replace_values(semi_random_list, number_to_replace, number_to_replace_with)
+
+# Unpack the following tuple into 4 variables
+def unpack_tuple():
+    a_tuple = (10, 20, 30, 40)
+    a, b, c, d = a_tuple
+
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+#unpack_tuple()
+
+
+# Accept a number from the user and print its multiplication table
+
+def multiplication_table():
+    try:
+        number = int(input("Enter a number to see its multiplication table: "))
+        print(f"Multiplication table for {number}:")
+        for i in range(1, 13):
+            print(f"{number} x {i} = {number * i}")
+    except ValueError:
+        print("Please enter a valid integer.")
+#multiplication_table()
+
+# Print the numbers from 1 to 10 using while loop
+
+def print_numbers_while():
+    i = 1
+    while i <= 10:
+        print(i)
+        i += 1
+#print_numbers_while()
 
 list1 = [5, 10, 15, 20, 25, 50, 20, 20, 45, 70, 20, 90, 100, 20]
 list2 = [5, 10, 15, 20, 25, 50, 20]
+# Here is a list of the functions defined above
 #replace_values(list1, 20, 200)
+#print(create_list(list_length, number_range, number_to_replace, percentage_to_replace))
 #unpack_tuple()
 #multiplication_table()
 #print_numbers_while()
+
+
+# This code is beyond the scope of the exercise, but it demonstrates how to use 
+# the first two functions defined above, create_list and replace_values.
+list_length = 80
+number_range = 100
+number_to_replace = 20
+number_to_replace_with = 200
+percentage_to_replace = 10
+
+semi_random_list = create_list(list_length, number_range, number_to_replace, percentage_to_replace)
+
+replace_values(semi_random_list, number_to_replace, number_to_replace_with)
+
