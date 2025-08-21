@@ -83,8 +83,8 @@ def print_numbers_while():
         i += 1
 #print_numbers_while()
 
-list1 = [5, 10, 15, 20, 25, 50, 20, 20, 45, 70, 20, 90, 100, 20]
-list2 = [5, 10, 15, 20, 25, 50, 20]
+list1 = [5, 10, 15, 20, 25, 50, 20]
+list2 = [5, 10, 15, 20, 25, 50, 20, 20, 45, 70, 20, 90, 100, 20]
 # Here is a list of the functions defined above
 #replace_values(list1, 20, 200)
 #print(create_list(list_length, number_range, number_to_replace, percentage_to_replace))
