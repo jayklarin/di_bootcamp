@@ -139,7 +139,12 @@ def print_numbers_loop():
     for i in range(1, 21):
         if i % 2 == 0:
             print(i)
-#print_numbers_loop()
+print_numbers_loop()
+
+new_list = list(range(1,21))
+for i in new_list:
+    print(new_list.index(i),i)
+
 
 #
 # 🌟 Exercise 6: While Loop
@@ -209,7 +214,7 @@ def favorite_fruit():
 		print("You chose one of your favorite fruits! Enjoy!")
 	else:
 		print("You chose a new fruit. I hope you enjoy it!")
-favorite_fruit()
+#favorite_fruit()
 
 #
 # 🌟 Exercise 8: Pizza Toppings
@@ -229,27 +234,56 @@ favorite_fruit()
 # "Adding [topping] to your pizza."
 # After exiting the loop, print all the toppings and the total cost of the pizza.
 # The base price is $10, and each topping adds $2.50.
+def pizza_toppings():
+    toppings = []
+    total_cost = 10
+    while True:
+        topping = input("Enter a pizza topping (or type 'quit' to finish): ")
+        if topping.lower() == 'quit':
+            break
+        toppings.append(topping)
+        total_cost += 2.50
+        print(f"Adding {topping} to your pizza.")
+
+    print("\nYour pizza toppings are:", ', '.join(toppings))
+    print(f"Total cost of the pizza: ${total_cost}")
+#pizza_toppings()
 #
 #
 # 🌟 Exercise 9: Cinemax Tickets
 #
-# Key Python Topics:
-#
-# Conditionals
-# Lists
-# Loops
-#
-#
-# Instructions:
-#
 # Ask for the age of each person in a family who wants to buy a movie ticket.
-# Calculate the total cost based on the following rules:
-# Free for people under 3.
-# $10 for people aged 3 to 12.
-# $15 for anyone over 12.
+# Pricing:
+#   - Free for people under 3
+#   - $10 for ages 3–12
+#   - $15 for ages 13+
 # Print the total ticket cost.
-#
-#
+
+def cinema_tickets():
+    cost = 0
+    try:
+        tickets_qty = int(input("How many tickets would you like to purchase? "))
+    except ValueError:
+        print("Invalid number entered. Please restart and enter a whole number.")
+        return
+
+    for i in range(1, tickets_qty + 1):
+        try:
+            age = int(input(f"How old is person #{i}? "))
+        except ValueError:
+            print("Invalid age entered, counting this ticket as $0.")
+            continue
+
+        if age < 3:
+            continue  # free
+        elif age <= 12:
+            cost += 10
+        else:
+            cost += 15
+
+    print(f"The total cost for all the tickets is ${cost}.")
+#cinema_tickets()
+
 # Bonus:
 #
 # Imagine a group of teenagers wants to see a restricted movie (only for ages 16–21).
@@ -277,13 +311,14 @@ favorite_fruit()
 
 
 # Here are the functions for the exercises above:
-#favorite_numbers()
-#tuple_error()
-#list_manipulation()
-#lists_floats_and_integers()
+#favorite_numbers()             #1
+#tuple_error()                  #2
+#list_manipulation()            #3
+#lists_floats_and_integers()    #4
+#print_numbers_loop()            #5
+#while_loop_name()               #6
+#favorite_fruit()                #7
+#pizza_toppings()                #8
+#cinema_tickets()                #9
 
-#about 40 minutest at this point
-
-# next...
-#print_numbers_loop()
-#while_loop_name()
+# Another 40 minutes for a total of about 80 minutes
