@@ -112,7 +112,7 @@ def lists_floats_and_integers():
     floats =  [1.5 + i * 1 for i in range(4)]  # Generates [1.5, 2.5, 3.5, 4.5]
     integers = [2 + i for i in range(4)]  # Generates [2, 3, 4, 5]
     floats_and_integers = floats + integers
-    
+
     print("List of floats:", floats)
     print("List of integers:", integers)
     floats_and_integers = sorted(floats_and_integers)
@@ -132,7 +132,15 @@ def lists_floats_and_integers():
 #
 # Write a for loop to print all numbers from 1 to 20, inclusive.
 # Write another for loop that prints every number from 1 to 20 where the index is even.
-#
+def print_numbers_loop():
+    for i in range(1, 21):
+        print(i)
+    print()
+    for i in range(1, 21):
+        if i % 2 == 0:
+            print(i)
+#print_numbers_loop()
+
 #
 # 🌟 Exercise 6: While Loop
 #
@@ -146,7 +154,16 @@ def lists_floats_and_integers():
 #
 # Write a while loop that keeps asking the user to enter their name.
 # Stop the loop if the user’s input is your name.
-#
+def while_loop_name():
+    my_name = "Jay"
+    while True:
+        name = input("Please enter your name: ")
+        if name == my_name:
+            print("Hello, you entered my name!")
+            break
+        else:
+            print("That's not my name, try again.")
+#while_loop_name()
 #
 # 🌟 Exercise 7: Favorite Fruits
 #
@@ -166,7 +183,34 @@ def lists_floats_and_integers():
 # "You chose one of your favorite fruits! Enjoy!"
 # If not, print:
 # "You chose a new fruit. I hope you enjoy it!"
+# 🌟 Exercise 7: Favorite Fruits
 #
+# Key Python Topics:
+#
+# Input/output
+# Strings and lists
+# Conditionals
+#
+#
+# Instructions:
+#
+# Ask the user to input their favorite fruits (they can input several fruits, separated by spaces).
+# Store these fruits in a list.
+# Ask the user to input the name of any fruit.
+# If the fruit is in their list of favorite fruits, print:
+# "You chose one of your favorite fruits! Enjoy!"
+# If not, print:
+# "You chose a new fruit. I hope you enjoy it!"
+
+def favorite_fruit():
+	fruits = input("Type all your favorite fruits separated by spaces.").split()
+	fruit_choice = input("Type one fruit.")
+	if fruit_choice in fruits:
+		print("You chose one of your favorite fruits! Enjoy!")
+	else:
+		print("You chose a new fruit. I hope you enjoy it!")
+favorite_fruit()
+
 #
 # 🌟 Exercise 8: Pizza Toppings
 #
@@ -241,3 +285,5 @@ def lists_floats_and_integers():
 #about 40 minutest at this point
 
 # next...
+#print_numbers_loop()
+#while_loop_name()
