@@ -73,7 +73,7 @@ def tuple_error():
 def list_manipulation():
     basket = ["Banana", "Apples", "Oranges", "Blueberries"]
     print("Original basket:", basket)
-    
+
     basket.remove("Banana")
     basket.remove("Blueberries")
     print("After removing Banana and Blueberries:", basket)
