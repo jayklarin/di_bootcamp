@@ -139,7 +139,7 @@ def print_numbers_loop():
     for i in range(1, 21):
         if i % 2 == 0:
             print(i)
-print_numbers_loop()
+#print_numbers_loop()
 
 new_list = list(range(1,21))
 for i in new_list:
@@ -291,6 +291,24 @@ def cinema_tickets():
 # Ask for each person’s age.
 # Remove anyone who isn’t allowed to watch.
 # Print the final list of attendees.
+def restricted_movie():
+    attendees = []
+    while True:
+        age = input("Enter the age of the person (or type 'quit' to finish): ")
+        if age.lower() == 'quit':
+            break
+        try:
+            age = int(age)
+            if 16 <= age <= 21:
+                attendees.append(age)
+            else:
+                print(f"Age {age} is not allowed to watch the movie.")
+        except ValueError:
+            print("Please enter a valid age.")
+
+    print("Final list of attendees:", attendees)
+#restricted_movie()
+
 #
 # 🌟 Exercise 10: Sandwich Orders
 #
@@ -308,17 +326,31 @@ def cinema_tickets():
 # Prepare each sandwich, one by one, and move them to a list called finished_sandwiches.
 # Print a message for each sandwich made, such as: "I made your Tuna sandwich."
 # Print the final list of all finished sandwiches.
+def sandwich_orders():
+    sandwich_orders = ["Tuna", "Pastrami", "Avocado", "Pastrami", "Egg", "Chicken", "Pastrami"]
+    finished_sandwiches = []
+
+    print("The deli has run out of Pastrami. Removing all instances from the order list.")
+    while "Pastrami" in sandwich_orders:
+        sandwich_orders.remove("Pastrami")
+
+    for sandwich in sandwich_orders:
+        finished_sandwiches.append(sandwich)
+        print(f"I made your {sandwich} sandwich.")
+    print("All finished sandwiches:", finished_sandwiches)
+sandwich_orders()
 
 
 # Here are the functions for the exercises above:
-#favorite_numbers()             #1
-#tuple_error()                  #2
-#list_manipulation()            #3
-#lists_floats_and_integers()    #4
+#favorite_numbers()              #1
+#tuple_error()                   #2
+#list_manipulation()             #3
+#lists_floats_and_integers()     #4
 #print_numbers_loop()            #5
 #while_loop_name()               #6
 #favorite_fruit()                #7
 #pizza_toppings()                #8
 #cinema_tickets()                #9
-
+#restricted_movie()              #Bonus
+#sandwich_orders()               #10
 # Another 40 minutes for a total of about 80 minutes
