@@ -142,5 +142,4 @@ def affordable_items():
     else:
         # Otherwise, print the items we can afford, sorted alphabetically
         print(sorted(affordable))
-
-affordable_items()
+#affordable_items()
