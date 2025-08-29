@@ -24,31 +24,42 @@
 
 # Instructions: Old MacDonald’s Farm
 
-# You are given example code and output. Your task is to create a Farm class that produces the same output.
-
-
+# You are given example code and output. Your task is
+# to create a Farm class that produces the same output.
 
 # Step 1: Create the Farm Class
-
 # Create a class called Farm.
 # This class will represent a farm and its animals.
-
-
-# Step 2: Implement the __init__ Method
-
-# The Farm class should have an __init__ method.
-# It should take one parameter: farm_name.
-# Inside __init__, create two attributes: name to store the farm’s name and animals to store the animals (initialize as an empty dictionary).
-
-
-# Step 3: Implement the add_animal Method
-
-# Create a method called add_animal.
-# It should take two parameters: animal_type and count (with a default value of 1). Count is the quantity of the animal that will be added to the animal dictionary.
-# The dictionary will look like this:
-# {'cow': 1, 'pig':3, 'horse': 2}
-# If the animal_type already exists in the animals dictionary, increment its count by count.
-# If it doesn’t exist, add it to the dictionary as the key and with the given count as value.
+class Farm:
+    # Step 2: Implement the __init__ Method
+    # The Farm class should have an __init__ method.
+    # It should take one parameter: farm_name.
+    # Inside __init__, create two attributes: name
+    # to store the farm’s name and animals to store
+    # the animals (initialize as an empty dictionary).
+    def __init__(self, farm_name) -> None:
+        self.farm_name = farm_name
+        self.animals = dict()
+    # Step 3: Implement the add_animal Method
+    # Create a method called add_animal.
+    # It should take two parameters: animal_type and
+    # count (with a default value of 1). Count is the
+    # quantity of the animal that will be added to the animal dictionary.
+    # The dictionary will look like this:
+    # {'cow': 1, 'pig':3, 'horse': 2}
+    # If the animal_type already exists in the animals dictionary,
+    # increment its count by count.
+    # If it doesn’t exist, add it to the dictionary as the key and
+    # with the given count as value.
+    def add_animal(self, animal_type, count = 1):
+        self.animal_type = animal_type
+        self.count = count
+        if animal_type in self.animals:
+            self.animals[count] += 1
+            print(f'{animal_type} has been added to the list')
+            self.animals.append(animal_type)
+        else:
+            print(f'{animal_type} is already on the list')
 
 
 # Step 4: Implement the get_info Method
