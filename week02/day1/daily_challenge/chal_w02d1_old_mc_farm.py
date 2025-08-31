@@ -51,23 +51,57 @@ class Farm:
     # increment its count by count.
     # If it doesn’t exist, add it to the dictionary as the key and
     # with the given count as value.
-    def add_animal(self, animal_type, count = 1):
-        self.animal_type = animal_type
-        self.count = count
+    def add_animal(self, animal_type, count=1):
         if animal_type in self.animals:
-            self.animals[count] += 1
-            print(f'{animal_type} has been added to the list')
-            self.animals.append(animal_type)
+            # If animal exists, increment its count
+            self.animals[animal_type] += count
+            print(f"Added {count} more {animal_type}(s). Now you have {self.animals[animal_type]}.")
         else:
-            print(f'{animal_type} is already on the list')
+            # If animal doesn’t exist, create a new entry
+            self.animals[animal_type] = count
+            print(f"Added {animal_type} to the farm with count {count}.")
+    # from bonus part
+    # Step 6: Implement the get_animal_types Method
+    # Add a method called get_animal_types to the Farm class.
+    # This method should return a sorted list of all animal types (keys from the animals dictionary).
+    # Use the sorted() function to sort the list.
+    def get_animal_types(self):
+        return sorted(self.animals.keys())
+    # Step 7: Implement the get_short_info Method
+    # Add a method called get_short_info to the Farm class.
+    # This method should return a string like “McDonald’s farm has cows, goats and sheeps.”.
+    # Call the get_animal_types method to get the list of animals.
+    # Construct the string, adding an “s” to the animal name if its count is greater than 1.
+    # Use string formatting to create the output.
+    def get_short_info(self):
+        animal_types = self.get_animal_types()
+        animal_list = []
+        for animal in animal_types:
+            if self.animals[animal] > 1:
+                animal_list.append(animal + 's')
+            else:
+                animal_list.append(animal)
+        if len(animal_list) > 1:
+            animals_str = ', '.join(animal_list[:-1]) + ' and ' + animal_list[-1]
+        else:
+            animals_str = animal_list[0]
+        return f"{self.farm_name}'s farm has {animals_str}."
 
 
-# Step 4: Implement the get_info Method
 
-# Create a method called get_info.
-# It should return a string that displays the farm’s name, the animals and their counts, and the “E-I-E-I-0!” phrase.
-# Format the output to match the provided example.
-# Use string formatting to align the animal names and counts into columns.
+
+    # Step 4: Implement the get_info Method
+
+    # Create a method called get_info.
+    # It should return a string that displays the farm’s name, the animals and their counts, and the “E-I-E-I-0!” phrase.
+    # Format the output to match the provided example.
+    # Use string formatting to align the animal names and counts into columns.
+    def get_info(self):
+        info = f"{self.farm_name}'s farm\n"
+        for animal, count in self.animals.items():
+            info += f"{animal} : {count}\n"
+        info += "    E-I-E-I-0!"
+        return info
 
 
 # Step 5: Test Your Code
@@ -90,12 +124,12 @@ class Farm:
 
 
 # # Test the code
-# macdonald = Farm("McDonald")
-# macdonald.add_animal('cow', 5)
-# macdonald.add_animal('sheep')
-# macdonald.add_animal('sheep')
-# macdonald.add_animal('goat', 12)
-# print(macdonald.get_info())
+macdonald = Farm("McDonald")
+macdonald.add_animal('cow', 5)
+macdonald.add_animal('sheep')
+macdonald.add_animal('sheep')
+macdonald.add_animal('goat', 12)
+print(macdonald.get_info())
 # #output:
 # # McDonald's farm
 
@@ -111,11 +145,12 @@ class Farm:
 
 
 # Step 6: Implement the get_animal_types Method
-
 # Add a method called get_animal_types to the Farm class.
 # This method should return a sorted list of all animal types (keys from the animals dictionary).
 # Use the sorted() function to sort the list.
-
+# see lines 68-69
+# Example:
+print(macdonald.get_animal_types())  # Output: ['cow', 'goat', 'sheep']
 
 # Step 7: Implement the get_short_info Method
 
@@ -124,3 +159,7 @@ class Farm:
 # Call the get_animal_types method to get the list of animals.
 # Construct the string, adding an “s” to the animal name if its count is greater than 1.
 # Use string formatting to create the output.
+# see lines 76 - 88
+
+# Example:
+print(macdonald.get_short_info())
