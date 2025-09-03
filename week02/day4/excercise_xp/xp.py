@@ -202,4 +202,4 @@ with open(employee_modified_file, "w", encoding="utf-8") as f:
     json.dump(data, f, indent=4)
 
 
-print("✅ Modified JSON saved to employee_modified.json")
+print("Modified JSON saved to employee_modified.json")
