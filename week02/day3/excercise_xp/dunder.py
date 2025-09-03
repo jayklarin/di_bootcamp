@@ -13,7 +13,8 @@
 
 # 🌟 Exercise 1: Currencies
 
-# Goal: Implement dunder methods for a Currency class to handle string representation, integer conversion, addition, and in-place addition.
+# Goal: Implement dunder methods for a Currency class to handle string representation,
+# integer conversion, addition, and in-place addition.
 
 
 
@@ -25,17 +26,61 @@
 
 
 # Instructions:
-
+'''
 class Currency:
     def __init__(self, currency, amount):
+        if not isinstance(currency, str):
+            raise TypeError("currency must be a string")
+        if not isinstance(amount, (int, float)):
+            raise TypeError("amount must be a number")
         self.currency = currency
         self.amount = amount
 
-    #Your code starts HERE
+    # Using the code above, implement the relevant methods and dunder methods which
+    # will output the results below.
+    # Worried I will get to many plural "s" values
+    def __str__(self) -> str:
+        unit = self.currency
+        if self.amount != 1 and not unit.endswith('s'):
+            unit += 's'
+        return f"{self.amount} {unit}"
 
+    def __repr__(self) -> str:
+        # Match comment expectation: same as printed string (e.g., '5 dollars')
+        return str(self)
 
+    # Allows int(c1)
+    def __int__(self):
+        return int(self.amount)
 
-# Using the code above, implement the relevant methods and dunder methods which will output the results below.
+    # Allows print(c1 + 5)
+    def __add__(self, other):
+        # Add Currency + Currency (must share same label) -> numeric result per comments
+        if isinstance(other, Currency):
+            if other.currency != self.currency:
+                raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{other.currency}>")
+            return self.amount + other.amount
+
+        # Add Currency + number -> numeric result per comments
+        if isinstance(other, (int, float)):
+            return self.amount + other
+
+        return NotImplemented
+
+    def __iadd__(self, other):
+        # Add Currency += Currency (must share same label)
+        if isinstance(other, Currency):
+            if other.currency != self.currency:
+                raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{other.currency}>")
+            self.amount += other.amount
+            return self
+
+        # Add Currency += number
+        if isinstance(other, (int, float)):
+            self.amount += other
+            return self
+
+        return NotImplemented
 
 # Hint : When adding 2 currencies which don’t share the same label you should raise an error.
 
@@ -83,7 +128,8 @@ print(c1 + c3)
 
 # Instructions:
 
-# Create a func.py file with a function that sums two numbers and prints the result. Then, import and call the function from exercise_one.py.
+# Create a func.py file with a function that sums two numbers and prints the result.
+# Then, import and call the function from exercise_one.py.
 
 
 
@@ -105,7 +151,7 @@ print(c1 + c3)
 # Import the function from func.py using one of the import syntaxes provided in the instructions.
 # Call the imported function with two numbers.
 
-
+'''
 # 🌟 Exercise 3: String Module
 
 # Goal: Generate a random string of length 5 using the string module.
@@ -128,19 +174,22 @@ print(c1 + c3)
 # Step 1: Import the string and random modules
 
 # Import the string and random modules.
-
+import string
+import random
 
 # Step 2: Create a string of all letters
-
-# Read about the strings methods HERE to find the best methods for this step
-
-
+all_letters = string.ascii_letters
 
 # Step 3: Generate a random string
-
+rnd_str = ""
+for c in range(0,6):
+    random_index = random.randint(0,51)
+    rnd_str += all_letters[random_index]
+print(rnd_str)
 # Use a loop to select 5 random characters from the combined string.
 # Concatenate the characters to form the random string.
-
+# for i in range(6):
+#     random(all_letters)
 
 # 🌟 Exercise 4: Current Date
 
@@ -158,11 +207,11 @@ print(c1 + c3)
 # Use the datetime module to create a function that displays the current date.
 
 # Step 1: Import the datetime module
-
+import datetime
 # Step 2: Get the current date
-
+todays_date = datetime.date.today()
 # Step 3: Display the date
-
+print(todays_date)
 
 
 # 🌟 Exercise 5: Amount Of Time Left Until January 1st
@@ -246,4 +295,3 @@ print(c1 + c3)
 # language_code: faker.language_code()
 # Append the user dictionary to the users list.
 # Step 5: Call the function and print the users list
-

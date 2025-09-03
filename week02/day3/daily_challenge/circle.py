@@ -41,7 +41,7 @@ class Circle:
 
     @property
     def area(self):
-        return math.pi * (self.radius**2)
+        return round(math.pi * (self.radius**2), 2)
 
     def __str__(self) -> str:
         return f"Circle with a radius of {self.radius} has a diameter of {self.diameter} and an area of {self.area}."
@@ -73,8 +73,10 @@ print(c4)
 print(c1 == c2)
 print(c1 > c3)
 print(c3 < c4)
-circles = [c1, c2, c4, c4]
+circles = [c1, c2, c3, c4]
 # sorting
 sorted_circles = sorted(circles)
+circle_list = []
 for c in sorted_circles:
-    print(c)
+    circle_list.append(c.area)
+print(circle_list)
