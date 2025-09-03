@@ -176,20 +176,21 @@ print(c1 + c3)
 # Import the string and random modules.
 import string
 import random
+from datetime import datetime
+
 
 # Step 2: Create a string of all letters
 all_letters = string.ascii_letters
 
 # Step 3: Generate a random string
 rnd_str = ""
+# Use a loop to select 5 random characters from the combined string.
+# Concatenate the characters to form the random string.
 for c in range(0,6):
     random_index = random.randint(0,51)
     rnd_str += all_letters[random_index]
 print(rnd_str)
-# Use a loop to select 5 random characters from the combined string.
-# Concatenate the characters to form the random string.
-# for i in range(6):
-#     random(all_letters)
+
 
 # 🌟 Exercise 4: Current Date
 
@@ -232,14 +233,21 @@ print(todays_date)
 # more info about this module HERE
 
 # Step 1: Import the datetime module
-
+import datetime
 # Step 2: Get the current date and time
+def time_until_jan_01():
+    current_dt = datetime.datetime.now()
+    current_year = current_dt.year
+    # Step 3: Create a datetime object for January 1st of the next year
+    next_jan_01 = datetime.datetime(current_year+1,1,1)
 
-# Step 3: Create a datetime object for January 1st of the next year
+    # Step 4: Calculate the time difference
+    delta = next_jan_01 - current_dt
+    day_diff = delta.days
 
-# Step 4: Calculate the time difference
-
-# Step 5: Display the time difference
+    # Step 5: Display the time difference
+    print(day_diff)
+# time_until_jan_01()
 
 
 
@@ -255,8 +263,19 @@ print(todays_date)
 
 # Instructions:
 
-# Create a function that accepts a birthdate as an argument (in the format of your choice), then displays a message stating how many minutes the user lived in his life.
+# Create a function that accepts a birthdate as an argument
+# (in the format of your choice), then displays a message stating
+# how many minutes the user lived in his life.
+from datetime import datetime
 
+def minutes_lived(birthday):
+    current_dt = datetime.now()
+    date_object = datetime.strptime(birthday, '%Y-%m-%d')
+    delta = current_dt - date_object
+    min_lived = int(delta.total_seconds() / 60)
+    print(f'You have lived {min_lived:,} minutes')
+
+minutes_lived('1971-11-09')
 
 
 # 🌟 Exercise 7: Faker Module
@@ -276,22 +295,39 @@ print(todays_date)
 
 # Instructions:
 
-# Install the faker module and use it to create a list of dictionaries, where each dictionary represents a user with fake data.
+# Install the faker module and use it to create a list of dictionaries,
+# where each dictionary represents a user with fake data.
 
 # Step 1: Install the faker module
 
 # Step 2: Import the faker module
-
+from faker import Faker
+fake = Faker()
 # Step 3: Create an empty list of users
+users = []
 
 # Step 4: Create a function to add users
 
 # Create a function that takes the number of users to generate as an argument.
-# Inside the function, use a loop to generate the specified number of users.
-# For each user, create a dictionary with the keys name, address, and language_code.
-# Use the faker instance to generate fake data for each key:
-# name: faker.name()
-# address: faker.address()
-# language_code: faker.language_code()
-# Append the user dictionary to the users list.
+def add_users(user_count):
+    # Inside the function, use a loop to generate the specified number of users.
+    for _ in range(user_count):
+        # For each user, create a dictionary with the keys name, address, and language_code.
+        user = {
+            "name": fake.name(),               # Generate a fake full name
+            "address": fake.address(),         # Generate a fake address
+            "language_code": fake.language_code()  # Generate a fake language code
+        }
+        users.append(user)
+
+
+    # Use the faker instance to generate fake data for each key:
+    # name: faker.name()
+    # address: faker.address()
+    # language_code: faker.language_code()
+    # Append the user dictionary to the users list.
 # Step 5: Call the function and print the users list
+add_users(5)
+
+for u in users:
+    print(u)
