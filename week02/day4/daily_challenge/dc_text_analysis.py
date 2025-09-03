@@ -98,6 +98,7 @@ class Text:
 
 
     # Bonus: Text Modification
+    # still catching up.  I'll come back if I finish all my non-bonus material
 
 # Step 6: Create the TextModification Class
 
