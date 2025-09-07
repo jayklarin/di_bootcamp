@@ -1,0 +1,20 @@
+Exercise 1: Quizz
+
+Answer the following questions:
+
+What is a class?
+    A class is BLUEPRINT for the structure of creating objects
+What is an instance?
+    is a specific example of the class.  The specific object.
+What is encapsulation?
+    bundling all the attributes and behaviors into a class
+What is abstraction?
+    Representing the items as objects without knowing how the object itself works.  An Engine class doesn't resquire you to know how an engine works.
+What is inheritance?
+    when the some or all attributes and behaviors
+What is multiple inheritance?
+    when a class inherits from morethan one parent class
+What is polymorphism?
+    allows different classes to have methods with the same name but behave differently
+What is method resolution order or MRO?
+    a heirarchy of classes when multiple inheritance is involved

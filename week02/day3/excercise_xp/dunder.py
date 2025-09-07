@@ -270,7 +270,7 @@ from datetime import datetime
 
 def minutes_lived(birthday):
     current_dt = datetime.now()
-    date_object = datetime.strptime(birthday, '%Y-%m-%d')
+    date_object = datetime.strptime(birthday, '%Y-%m-%d')f
     delta = current_dt - date_object
     min_lived = int(delta.total_seconds() / 60)
     print(f'You have lived {min_lived:,} minutes')
