@@ -1,0 +1,17 @@
+🚀 Challenge: Classify And Convert
+
+Task: Below is a mix of structured and unstructured data. Your challenge is to:
+
+1. Classify each item as structured or unstructured data.
+
+2. Propose a way to convert the unstructured data into a structured format.
+
+Data to Classify:
+
+A. List of product prices in a CSV file - structured
+
+B. Customer feedback comments from a survey - unstructured
+
+C. A graph showing sales over the past year unstructured
+
+D. Tweets mentioning brand - unstructured
