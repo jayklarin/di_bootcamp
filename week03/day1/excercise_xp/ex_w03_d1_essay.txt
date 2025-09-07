@@ -1,0 +1,20 @@
+🌟Exercise 1: Introduction To Data Analysis (Easy)
+
+
+
+Objective: Understand The Basic Overview And Significance Of Data Analysis.
+
+Task:
+
+Write a short essay or report on the following topics:
+
+What is data analysis?
+Why is data analysis important in modern contexts?
+List and describe three areas where data analysis is applied today.
+Hint/Tip:
+
+Research current trends in data analysis and real-world examples to provide depth to your essay.
+
+Simply stated, data analysis is a way of gleaning insights from all sorts of data.  There are four main types of data analysis: Descriptive (what happened), Diagnostic (why it happened), Predictive (what may happen in the future), Prescriptive (what should we do given this data).
+
+Data analysis is everywhere in todays world.  This morning I took a bus to get here.  How did I know when the bus was going to arrive, I opened Google maps and it gave me a schedule of when the bus would arrive based of an array of considerations.  Each morning I look at the schedule while at the bus stop, and though there is a scheduled time, Google maps tells me the likely time of arrival.  Here, Google is doing the analysis.  But how do I decide which instance of time I want to leave on the 412 bus.  My first week at DI, I was on the round trip bus ride for 4 hours and more.  I wanted to minimize my bus time, so I took the bus at different times and timed how long each took.  There was a correlation around what I call 'max morning rush hour,' the further away from rush hour in either direction, the less time it took.  I halved the amount of time I spend on the bus by maximizing for minimal time on the bus.  In today's world, this is how we need to behave.  The old world of getting a printed bus schedule is gone.  Everything is like this now.  International travel, ordering food, looking for jobs, etc. are all subject to the modern paradigm of doing things, and almost, if not all of it, is used or useful for data analysis.
