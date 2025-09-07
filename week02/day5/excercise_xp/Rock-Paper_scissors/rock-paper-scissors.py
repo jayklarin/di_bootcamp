@@ -36,20 +36,54 @@
 # rock-paper-scissors.py
 from game import Game
 
-def get_user_menu_choice():
+
+def get_user_menu_choice() -> str:
     # ... code to display menu and get user choice ...
     # ... code to validate user input ...
     # ... code to return user choice ...
+    while True:
+        print("\n=== Rock–Paper–Scissors ===")
+        print("1) Play a new game")
+        print("2) Show scores")
+        print("3) Quit")
+        choice = input("Choose an option (1/2/3): ").strip()
+        if choice in {"1", "2", "3"}:
+            return choice
+        print("Invalid choice. Please enter 1, 2, or 3.")
 
-def print_results(results):
+
+def print_results(results: dict) -> None:
     # ... code to print results in a user-friendly way ...
     # ... code to thank user ...
+    wins = results.get("win", 0)
+    losses = results.get("loss", 0)
+    draws = results.get("draw", 0)
+    total = wins + losses + draws
+    print("\n=== Results ===")
+    print(f"Wins: {wins}, Losses: {losses}, Draws: {draws}, Total Games: {total}")
+    print("Thanks for playing!\n")
 
-def main():
+
+def main() -> None:
     # ... code to call all the related functions depending on the user's choice.
+    results = {"win": 0, "loss": 0, "draw": 0}
+
+    while True:
+        choice = get_user_menu_choice()
+
+        if choice == "1":
+            game = Game()
+            outcome = game.play()  # "win", "loss", or "draw"
+            if outcome in results:
+                results[outcome] += 1
+
+        elif choice == "2":
+            print_results(results)
+
+        elif choice == "3":
+            print_results(results)
+            break
 
 
 if __name__ == "__main__":
     main()
-
-
